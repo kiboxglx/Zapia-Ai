@@ -76,8 +76,8 @@ export const getDashboardMetrics = authenticatedAction(EmptySchema, async (_, ct
                 pipelineValue: Number(pipelineVal[0]?.total || 0),
                 messagesToday: Number(msgsToday[0]?.count || 0)
             },
-            funnel: funnel.map(f => ({ name: f.stage, value: Number(f.count) })),
-            activity: activity.map(a => ({ date: a.date, messages: Number(a.count) })),
+            funnel: funnel.map((f: any) => ({ name: f.stage, value: Number(f.count) })),
+            activity: activity.map((a: any) => ({ date: a.date, messages: Number(a.count) })),
             recent: recentMessages
         };
     });
