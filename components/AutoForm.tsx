@@ -53,7 +53,7 @@ function AutoField({ name, schema }: { name: string, schema: z.ZodTypeAny }) {
     const label = name.replace(/([A-Z])/g, " $1").replace(/^./, str => str.toUpperCase()); // naive label gen
 
     // Safe type checking
-    const typeName = schema._def.typeName;
+    const typeName = (schema._def as any).typeName;
 
     // String Input
     if (typeName === 'ZodString') {
@@ -92,7 +92,7 @@ function AutoField({ name, schema }: { name: string, schema: z.ZodTypeAny }) {
 
     // Enum Selection (The Requirement: Select vs Drawer)
     if (typeName === 'ZodEnum') {
-        const options: string[] = schema._def.values;
+        const options: string[] = (schema._def as any).values;
 
         if (isDesktop) {
             // Desktop: Native Select or Radix Select (using native for scaffolding simplicity)
@@ -115,7 +115,7 @@ function AutoField({ name, schema }: { name: string, schema: z.ZodTypeAny }) {
         return (
             <div className="space-y-2">
                 <Label>{label}</Label>
-                <Drawer.Root mustFocus={false}>
+                <Drawer.Root>
                     <Drawer.Trigger asChild>
                         <button type="button" className="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
                             {value || "Select option..."}
