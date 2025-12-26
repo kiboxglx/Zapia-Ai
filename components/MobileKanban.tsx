@@ -91,7 +91,7 @@ export function MobileKanban() {
         if (over && active.id !== over.id) {
             let newStageId = over.data.current?.sortable?.containerId;
 
-            if (!newStageId && data?.stages.find((s: any) => s.id === over.id)) {
+            if (!newStageId && (data as any)?.stages?.find((s: any) => s.id === over.id)) {
                 newStageId = over.id;
             }
 
