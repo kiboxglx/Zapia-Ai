@@ -1,8 +1,4 @@
 import { pgSchema, varchar, text, timestamp, boolean, uuid, jsonb, vector } from "drizzle-orm/pg-core";
-/* ... */
-return { users, projects, tasks, contacts, messages, aiConfigs, whatsappConfigs, embeddings, knowledgeBase, pipelines, stages, deals };
-};
-
 // --- Schema Creator ---
 export const createSchema = (schema_name: string) => {
     const schema = pgSchema(schema_name);
