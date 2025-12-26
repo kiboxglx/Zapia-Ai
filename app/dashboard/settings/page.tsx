@@ -57,7 +57,8 @@ export default function SettingsPage() {
                 <UICardContent>
                     <AutoForm
                         schema={AISettingsSchema}
-                        defaultValues={data?.ai}
+                        defaultValues={(data as any)?.ai}
+
                         onSubmit={onSaveAI}
                     />
                 </UICardContent>
@@ -82,7 +83,7 @@ export default function SettingsPage() {
 
                     <AutoForm
                         schema={WhatsAppSettingsSchema}
-                        defaultValues={data?.whatsapp}
+                        defaultValues={(data as any)?.whatsapp}
                         onSubmit={onSaveWA}
                     />
                 </UICardContent>
