@@ -37,7 +37,7 @@ export function MobileKanban() {
     // 2. Mutation (Optimistic)
     const mutation = useMutation({
         mutationFn: async ({ dealId, stageId }: { dealId: string, stageId: string }) => {
-            return await moveDeal(dealId, stageId);
+            return await moveDeal({ dealId, stageId });
         },
         onMutate: async (newItem) => {
             await queryClient.cancelQueries({ queryKey: ['crm-pipeline'] });
