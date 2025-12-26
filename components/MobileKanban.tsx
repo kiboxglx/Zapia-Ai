@@ -31,7 +31,7 @@ export function MobileKanban() {
     // 1. Data Fetching
     const { data, isLoading } = useQuery({
         queryKey: ['crm-pipeline'],
-        queryFn: () => getPipeline()
+        queryFn: () => getPipeline({})
     });
 
     // 2. Mutation (Optimistic)
