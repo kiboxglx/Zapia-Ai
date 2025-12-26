@@ -1,11 +1,3 @@
-import type { NextConfig } from "next";
-import withSerwistInit from "@serwist/next";
-
-const withSerwist = withSerwistInit({
-  swSrc: "app/sw.ts",
-  swDest: "public/sw.js",
-});
-
 const nextConfig: any = {
   // Production ready optimizations
   reactStrictMode: true,
@@ -23,10 +15,7 @@ const nextConfig: any = {
   },
   typescript: {
     ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
   }
 };
 
-export default withSerwist(nextConfig);
+export default nextConfig;
