@@ -12,7 +12,7 @@ const NAV_ITEMS = [
     { label: 'Dashboard', icon: LayoutDashboard, href: '/dashboard' },
     { label: 'Chats', icon: MessageSquare, href: '/chats' },
     { label: 'Kanban', icon: KanbanIcon, href: '/kanban' },
-    { label: 'Config', icon: Settings, href: '/settings' },
+    { label: 'Config', icon: Settings, href: '/dashboard/settings' },
 ]
 
 export function AppShell({ children }: { children: React.ReactNode }) {
