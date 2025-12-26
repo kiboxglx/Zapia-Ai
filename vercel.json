@@ -1,11 +1,10 @@
+```
 {
     "functions": {
         "app/api/**/*": {
-            "maxDuration": 60
-        },
-        "lib/inngest/**/*": {
             "maxDuration": 60
         }
     },
     "framework": "nextjs"
 }
+```
