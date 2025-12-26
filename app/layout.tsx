@@ -35,16 +35,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <body className={cn(inter.className, "antialiased bg-background text-foreground overflow-hidden h-screen w-screen")}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(inter.className, "antialiased bg-background text-foreground overflow-hidden h-screen w-screen")}>
+        <ClerkProvider>
           <ReactQueryProvider>
             <AppShell>
               {children}
             </AppShell>
           </ReactQueryProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+        </ClerkProvider>
+      </body>
+    </html>
   );
 }
