@@ -104,8 +104,8 @@ export function MobileKanban() {
 
     if (isLoading) return <DashboardSkeleton />
 
-    const stages = data?.stages || [];
-    const deals = data?.deals || [];
+    const stages = (data as any)?.stages || [];
+    const deals = (data as any)?.deals || [];
 
     return (
         <DndContext
