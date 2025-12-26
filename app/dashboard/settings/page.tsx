@@ -18,7 +18,7 @@ function UICardContent({ children }: any) { return <div className="p-6 pt-0">{ch
 export default function SettingsPage() {
     const { data, isLoading } = useQuery({
         queryKey: ['settings'],
-        queryFn: () => getSettings()
+        queryFn: () => getSettings({})
     });
 
     const onSaveAI = async (values: any) => {
