@@ -28,7 +28,7 @@ export function AutoForm<T extends z.ZodObject<any>>({
 }) {
     const form = useForm({
         resolver: zodResolver(schema),
-        defaultValues
+        defaultValues: defaultValues as any
     })
 
     return (
