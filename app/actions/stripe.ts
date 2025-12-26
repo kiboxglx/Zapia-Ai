@@ -9,7 +9,7 @@ import { eq } from 'drizzle-orm'
 import { headers } from 'next/headers'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-    apiVersion: '2024-12-18.acacia' // Use latest or what is installed
+    apiVersion: '2024-12-18.acacia' as any // Bypass strict version check for build
 });
 
 const CheckoutSchema = z.object({

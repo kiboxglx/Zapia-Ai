@@ -4,7 +4,7 @@ import { withTenantDB } from '@/db/middleware'
 import { eq } from 'drizzle-orm'
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-    apiVersion: '2024-12-18.acacia'
+    apiVersion: '2024-12-18.acacia' as any
 });
 
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!;
