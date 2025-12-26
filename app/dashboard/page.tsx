@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { getDashboardMetrics } from '@/app/actions/analytics'
+import { getDashboardMetrics } from '@/app/actions/dashboard'
 import { KPICard, PipelineFunnel, ActivityChart } from '@/components/dashboard/AnalyticsCharts'
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card'
 import { Activity, DollarSign, MessageSquare, Users, ArrowUpRight } from 'lucide-react'
